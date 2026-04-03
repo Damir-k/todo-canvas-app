@@ -151,8 +151,8 @@ export class App extends React.Component {
   play_done_note(id) {
     const completed = this.state.notes.find(({ id }) => id)?.completed;
     if (!completed) {
-      const texts = ['Молодец!', 'Ай красавица!', 'Супер!'];
-      const idx = (Math.random() * texts.length) | 0;
+      const texts = ['Молодец!', 'Красавица!', 'Супер!'];
+      const idx = Math.floor(Math.random() * texts.length);
       this._send_action_value('done', texts[idx]);
     }
   }
