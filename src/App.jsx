@@ -187,6 +187,12 @@ export class App extends React.Component {
             this.play_done_note(note.id);
             this.done_note({ type: 'done_note', id: note.id });
           }}
+          onDelete={(note) => {
+            this.delete_note({ type: 'delete_note', id: note.id})
+          }}
+          onDeleteAll={() => {
+            this.delete_all_notes({ type: 'delete_all_notes'})
+          }}
         />
       </>
     );

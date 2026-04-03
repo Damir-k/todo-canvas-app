@@ -4,12 +4,19 @@ import "../App.css";
 
 
 export const TaskItem = (props) => {
-  const { item, index, onDone } = props;
+  const { item, index, onDone, onDelete } = props;
   return (
     <li
       className = "task-item"
       //key       = {item.id}
     >
+      <input
+        className = "done-item"
+        type      = "checkbox"
+        checked   = {item.completed}
+        onChange  = {(event) => onDone(item) }
+      />
+      
       <span>
         <span
           style = {{ fontWeight: "bold" }}
@@ -20,12 +27,12 @@ export const TaskItem = (props) => {
           {item.title}
         </span>
       </span>
-      <input
-        className = "done-item"
-        type      = "checkbox"
-        checked   = {item.completed}
-        onChange  = {(event) => onDone(item) }
-      />
+      
+      <button
+        className = "delete-item"
+        type      = "button"
+        onClick   = {(event) => onDelete(item)}
+      >X</button>
     </li>
   )
 }
