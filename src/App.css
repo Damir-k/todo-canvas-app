@@ -9,7 +9,8 @@ body {
 }
 
 .add-task,
-.task-item {
+.task-item,
+.delete-all {
   background-color: rgba(255, 255, 255, 0.24);
   padding: 16px 32px;
   font-weight: 500;
@@ -20,7 +21,8 @@ body {
   color: #ffffff;
 }
 
-.add-task {
+.add-task,
+.delete-all {
   margin-top: 48px;
   width: 100%;
   height: 72px;
@@ -47,8 +49,25 @@ body {
   align-items: center;
 }
 
-.done-note {
+.done-item,
+.delete-item {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
+}
+
+.delete-all {
+  width: 50%;
+  border-radius: 20px;
+  margin: 24px auto;
+  display: block;
+}
+
+.add-task:hover,
+.delete-all:hover {
+  outline: auto;
+}
+
+.delete-all:active {
+  background-color: rgba(255, 255, 255, 0.44);
 }

@@ -5,7 +5,7 @@ import "../App.css";
 
 
 export const TaskItemList = (props) => {
-  const { items, onDone } = props
+  const { items, onDone, onDelete } = props
   return (
     <ul className="notes">
       {
@@ -15,6 +15,7 @@ export const TaskItemList = (props) => {
             key    = { index }
             index  = { index }
             onDone = { () => onDone(item) }
+            onDelete = { () => onDelete(item) }
           />
         ))
       }
