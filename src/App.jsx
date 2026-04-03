@@ -28,7 +28,7 @@ export class App extends React.Component {
     console.log('constructor');
 
     this.state = {
-      notes: [{ id: Math.random().toString(36).substring(7), title: 'тест' }],
+      notes: [{ id: Math.random().toString(36).substring(7), title: 'тест', completed: false }],
     };
 
     this.assistant = initializeAssistant(() => this.getStateForAssistant());
@@ -151,7 +151,7 @@ export class App extends React.Component {
   play_done_note(id) {
     const completed = this.state.notes.find(({ id }) => id)?.completed;
     if (!completed) {
-      const texts = ['Молодец!', 'Красавчик!', 'Супер!'];
+      const texts = ['Молодец!', 'Ай красавица!', 'Супер!'];
       const idx = (Math.random() * texts.length) | 0;
       this._send_action_value('done', texts[idx]);
     }
