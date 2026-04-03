@@ -101,6 +101,9 @@ export class App extends React.Component {
         case 'delete_note':
           return this.delete_note(action);
 
+        case 'delete_all_notes':
+          return this.delete_all_notes(action);
+
         default:
           throw new Error();
       }
@@ -161,6 +164,13 @@ export class App extends React.Component {
     console.log('delete_note', action);
     this.setState({
       notes: this.state.notes.filter(({ id }) => id !== action.id),
+    });
+  }
+
+  delete_all_notes(action) {
+    console.log('delete_all_notes', action);
+    this.setState({
+      notes: []
     });
   }
 
