@@ -1703,21 +1703,21 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@salutejs/client@=1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@salutejs/client/-/client-1.32.0.tgz#32aef53925f90992489326ff69de2ae67999ef8c"
-  integrity sha512-sooFgbFwt1I2K8Fb9UKaQ+/hDpD9hTqrEAQTGmvWGSrHYwOGrmw5OQal7XOm6DiOMoPwXsKWc+qgp0C+ybPf9Q==
+"@salutejs/client@=1.37.1":
+  version "1.37.1"
+  resolved "https://registry.yarnpkg.com/@salutejs/client/-/client-1.37.1.tgz#0a4044c826d4617735ca0143348aa3a0d6d9a88d"
+  integrity sha512-tar2tKQZmIo7YU6WqnriH856nSrzF8CdqLKp0ngZExsyGCY9auRwEvyppjplv0OlPQKCpfm0VmF4TGirQsZksg==
   dependencies:
-    "@salutejs/scenario" "^0.38.0"
+    "@salutejs/scenario" "1.2.0"
     lodash.clonedeep "^4.5.0"
     long "^5.2.3"
-    protobufjs "^7.2.4"
+    protobufjs "^7.2.6"
     uuid "^8.3.2"
 
-"@salutejs/scenario@^0.38.0":
-  version "0.38.1"
-  resolved "https://registry.yarnpkg.com/@salutejs/scenario/-/scenario-0.38.1.tgz#d48c6304e60b305ee2122b8343434eb97fdb9487"
-  integrity sha512-8t3jg9w6qorDHhNKQObTgBWk0X+KIYy5T04kg0yZhBJBJMM3Th/JMFC3DGTFxtR+A7AyaXuKCfww0Vl663Ju8Q==
+"@salutejs/scenario@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@salutejs/scenario/-/scenario-1.2.0.tgz#267bd0db94443e737ba85f33768f5c64ae40a1da"
+  integrity sha512-p0TJp4xFWCBUDy4C+Jj/97h2cddbQDRAqakFhGOquSoWKf5Qzt9efjzbX7DcpegKZri7Isym720eAzmQeRnWaw==
   dependencies:
     node-fetch "2.6.7"
     uuid "9.0.0"
@@ -2097,9 +2097,11 @@
   integrity sha512-OPs5WnnT1xkCBiuQrZA4+YAV4HEJejmHneyraIaxsbev5yCEr6KMwINNFP9wQeFIw8FWcoTqF3vQsa5CDaI+8Q==
 
 "@types/node@>=13.7.0":
-  version "20.2.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.2.4.tgz#e6c3345f7ed9c6df41fdc288a94e2633167bc15d"
-  integrity sha512-ni5f8Xlf4PwnT/Z3f0HURc3ZSw8UyrqMqmM3L5ysa7VjHu8c3FOmIo1nKCcLrV/OAmtf3N4kFna/aJqxsfEtnA==
+  version "25.6.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-25.6.0.tgz#4e09bad9b469871f2d0f68140198cbd714f4edca"
+  integrity sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ==
+  dependencies:
+    undici-types "~7.19.0"
 
 "@types/node@^20.12.7":
   version "20.12.7"
@@ -6306,9 +6308,9 @@ lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 long@^5.0.0, long@^5.2.3:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/long/-/long-5.2.3.tgz#a3ba97f3877cf1d778eccbcb048525ebb77499e1"
-  integrity sha512-lcHwpNoggQTObv5apGNCTdJrO69eHOZMi4BNC+rTLER8iHAqGrUVeLh/irVIM7zTw2bOXA8T6uNPeujwOLg/2Q==
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/long/-/long-5.3.2.tgz#1d84463095999262d7d7b7f8bfd4a8cc55167f83"
+  integrity sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -7574,10 +7576,10 @@ prop-types@^15.8.1:
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
-protobufjs@^7.2.4:
-  version "7.2.6"
-  resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-7.2.6.tgz#4a0ccd79eb292717aacf07530a07e0ed20278215"
-  integrity sha512-dgJaEDDL6x8ASUZ1YqWciTRrdOuYNzoOf27oHNfdyvKqHr5i0FV7FSLU+aIeFjyFgVxrpTOtQUi0BLLBymZaBw==
+protobufjs@^7.2.6:
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-7.5.5.tgz#b7089ca4410374c75150baf277353ef76db69f96"
+  integrity sha512-3wY1AxV+VBNW8Yypfd1yQY9pXnqTAN+KwQxL8iYm3/BjKYMNg4i0owhEe26PWDOMaIrzeeF98Lqd5NGz4omiIg==
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
@@ -8941,6 +8943,11 @@ undici-types@~5.26.4:
   version "5.26.5"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
   integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
+
+undici-types@~7.19.0:
+  version "7.19.2"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.19.2.tgz#1b67fc26d0f157a0cba3a58a5b5c1e2276b8ba2a"
+  integrity sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"
