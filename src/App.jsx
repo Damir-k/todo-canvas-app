@@ -179,6 +179,8 @@ export class App extends React.Component {
   make_move(move) {
     console.log("make_move:", move)
     const newChess = new Chess(this.state.chess.fen())
+    if (newChess.turn() === 'b') return false
+    
     try {
       newChess.move(move);
     } catch {

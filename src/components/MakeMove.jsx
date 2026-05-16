@@ -19,9 +19,7 @@ export class MakeMove extends React.Component {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (!onMoveMade(this.state.move)) {
-            alert("Invalid move!")
-          };
+          onMoveMade(this.state.move) || alert("Invalid move!")
           this.setState({
             move: '',
           })

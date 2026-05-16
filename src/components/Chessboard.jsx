@@ -5,7 +5,6 @@ import { Chessboard } from "react-chessboard";
 
 export const ChessboardComponent = (props) => {
     const { chess, onMoveMade } = props;
-    const chessGame = chess;
 
     // handle piece drop
     function onPieceDrop({
@@ -14,7 +13,7 @@ export const ChessboardComponent = (props) => {
     }) {
       console.log("onPieceDrop")
         // type narrow targetSquare potentially being null (e.g. if dropped off board)
-      if (!targetSquare) {
+      if (!targetSquare || chess.turn() === 'b') {
         return false;
       }
       let successful = onMoveMade(sourceSquare + '-' + targetSquare)
@@ -23,7 +22,7 @@ export const ChessboardComponent = (props) => {
 
     // set the chessboard options
     const chessboardOptions = {
-      position: chessGame.fen(),
+      position: chess.fen(),
       onPieceDrop: onPieceDrop,
       id: 'main',
       boardStyle: {
