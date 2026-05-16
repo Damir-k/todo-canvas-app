@@ -11,27 +11,16 @@ export const Game = (props) => {
   const { items, onAdd, onDone, onDelete, onDeleteAll, onMoveMade, chess, onUndoMove, onGameReset } = props;
   return (
     <main className="container">
-      {/* <AddTask
-        onAdd = { onAdd }
-      />
-      <DeleteAll
-        onDeleteAll = { onDeleteAll }
-      />
-      <TaskItemList
-        items  = { items }
-        onDone = { onDone }
-        onDelete = { onDelete }
-      /> */}
       <MakeMove
         chess = { chess }
         onMoveMade = { onMoveMade }
       />
       <UndoMove
-        chess = {chess}
+        chess = { chess }
         onUndoMove = { onUndoMove }
       />
       <ResetGame
-        chess = {chess}
+        chess = { chess }
         onGameReset = { onGameReset }
       />
       <ChessboardComponent 

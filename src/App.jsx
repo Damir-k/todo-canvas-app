@@ -157,6 +157,22 @@ export class App extends React.Component {
     return newChess
   }
 
+  show_result(chess) {
+    console.log(chess)
+    if (chess.isCheckmate()) {
+      if (chess.turn() === 'w') {
+        alert("Black won!")
+      } else {
+        alert("White won!")
+      }
+    } else if (chess.isDraw() || chess.isDrawByFiftyMoves() || chess.isStalemate() || 
+    chess.isInsufficientMaterial() || chess.isThreefoldRepetition()) {
+      alert("It's a draw!")
+    } else {
+      alert("What is happening")
+    }
+  }
+
   make_move(move) {
     const newChess = this.update_chess()
 
@@ -165,10 +181,16 @@ export class App extends React.Component {
     } catch {
       return false
     }
+
+    if (newChess.isGameOver()) {
+      this.show_result(newChess)
+      return true
+    }
+
     if (newChess.turn() === 'b') {
       let blackMoves = newChess.moves()
       let randomMove = blackMoves[Math.floor(Math.random()* blackMoves.length)]
-      setTimeout(() => this.make_move(randomMove), 2000)
+      setTimeout(() => this.make_move(randomMove), 500)
       console.log("black's turn is going to be: ", randomMove)
     }
     return true
