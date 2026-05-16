@@ -22,6 +22,10 @@ body {
   color: #ffffff;
 }
 
+#main-board {
+  margin: 48px auto 128px auto;
+}
+
 .make-move,
 .add-task,
 .delete-all {

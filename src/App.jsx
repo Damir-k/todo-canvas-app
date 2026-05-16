@@ -176,6 +176,19 @@ export class App extends React.Component {
     });
   }
 
+  make_move(move) {
+    console.log("make_move:", move)
+    const newChess = new Chess(this.state.chess.fen())
+    try {
+      newChess.move(move);
+    } catch {
+      return false
+    }
+    this.setState({ chess: newChess })
+    return true
+    // console.log(newChess.ascii())
+  }
+
   render() {
     console.log('render');
     return (
@@ -196,8 +209,9 @@ export class App extends React.Component {
             this.delete_all_notes({ type: 'delete_all_notes'})
           }}
           onMoveMade={(move) => {
-            console.log("Made a move: ", move)
+            return this.make_move(move)
           }}
+          chess={this.state.chess}
         />
       </>
     );
