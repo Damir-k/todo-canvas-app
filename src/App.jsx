@@ -6,7 +6,7 @@ import { Game } from './pages/Game';
 import { Chess, DEFAULT_POSITION } from 'chess.js'
 
 const initializeAssistant = (getState /*: any*/, getRecoveryState) => {
-  if (import.meta.env.NODE_ENV === 'development' || true) {
+  if (import.meta.env.MODE === 'development') {
     return createSmartappDebugger({
       token: import.meta.env.VITE_APP_TOKEN ?? '',
       initPhrase: `Запусти ${import.meta.env.VITE_APP_SMARTAPP}`,
@@ -54,7 +54,7 @@ export class App extends React.Component {
     // console.log('constructor');
 
     this.state = {
-      notes: [{ id: Math.random().toString(36).substring(7), title: 'тест', completed: false }],
+      // notes: [{ id: Math.random().toString(36).substring(7), title: 'тест', completed: false }],
       chess: initializeChessMatch()
     };
 
@@ -94,19 +94,19 @@ export class App extends React.Component {
   getStateForAssistant() {
     // console.log('getStateForAssistant: this.state:', this.state);
     const state = {
-      item_selector: {
-        items: this.state.notes.map(({ id, title }, index) => ({
-          number: index + 1,
-          id,
-          title,
-        })),
-        ignored_words: [
-          'добавить','установить','запиши','поставь','закинь','напомнить', // addNote.sc
-          'удалить', 'удали',  // deleteNote.sc
-          'выполни', 'выполнил', 'сделал' // выполнил|сделал
-        ],
-      },
-      fen: this.state.chess.fen()
+      // item_selector: {
+      //   items: this.state.notes.map(({ id, title }, index) => ({
+      //     number: index + 1,
+      //     id,
+      //     title,
+      //   })),
+      //   ignored_words: [
+      //     'добавить','установить','запиши','поставь','закинь','напомнить', // addNote.sc
+      //     'удалить', 'удали',  // deleteNote.sc
+      //     'выполни', 'выполнил', 'сделал' // выполнил|сделал
+      //   ],
+      // },
+      chess: this.state.chess,
     };
     // console.log('getStateForAssistant: state:', state);
     return state;

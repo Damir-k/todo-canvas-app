@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/chess-canvas-app/',
   root: '.',  // Your project root (where package.json is)
   publicDir: 'public',  // Keep using your public folder
   build: {
