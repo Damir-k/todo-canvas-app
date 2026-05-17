@@ -21,6 +21,8 @@ body {
 
 #main-board {
   margin: 0 auto 144px auto;
+  border: 15px solid rgb(100, 100, 100);
+  border-radius: 10px;
 }
 
 .make-move {

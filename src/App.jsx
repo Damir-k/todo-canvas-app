@@ -120,10 +120,21 @@ export class App extends React.Component {
           return this.reset_game()
         
         case 'undo_move':
-          return this.take_back()
+          if(this.take_back()) {
+            this.say_phrase("Возвращаю Ваш ход.")
+          } else {
+            setTimeout(() => {
+              if(this.take_back()) {
+                this.say_phrase("Возвращаю Ваш ход.")
+              } else {
+                this.say_phrase("Вернуть ход не получилось.")
+              }  
+            }, 500)
+          }
+          break;
 
         default:
-          throw new Error();
+          console.error("unknown action type:", action.type)
       }
     }
   }
@@ -153,6 +164,10 @@ export class App extends React.Component {
       const idx = Math.floor(Math.random() * texts.length);
       this._send_action_value('done', texts[idx]);
     }
+  }
+
+  say_phrase(phrase) {
+    this._send_action_value('say_phrase', phrase)
   }
 
   // When modifying Chess object in any way, create a new clone first so React notices
@@ -212,13 +227,8 @@ export class App extends React.Component {
 
   take_back() {
     const newChess = this.update_chess()
-    try {
-      newChess.undo()
-      newChess.undo()
-    } catch {
-      return false
-    }
-    return true
+
+    return newChess.turn() === 'w' && (newChess.undo() !== null && newChess.undo() !== null)
   }
 
   reset_game() {
