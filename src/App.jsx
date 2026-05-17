@@ -106,6 +106,7 @@ export class App extends React.Component {
           'выполни', 'выполнил', 'сделал' // выполнил|сделал
         ],
       },
+      fen: this.state.chess.fen()
     };
     console.log('getStateForAssistant: state:', state);
     return state;
@@ -115,17 +116,11 @@ export class App extends React.Component {
     console.log('dispatchAssistantAction', action);
     if (action) {
       switch (action.type) {
-        case 'add_note':
-          return this.add_note(action);
-
-        case 'done_note':
-          return this.done_note(action);
-
-        case 'delete_note':
-          return this.delete_note(action);
-
-        case 'delete_all_notes':
-          return this.delete_all_notes(action);
+        case 'reset_game':
+          return this.reset_game()
+        
+        case 'undo_move':
+          return this.take_back()
 
         default:
           throw new Error();
@@ -213,7 +208,6 @@ export class App extends React.Component {
 
     }
     return true
-    // console.log(newChess.ascii())
   }
 
   take_back() {
